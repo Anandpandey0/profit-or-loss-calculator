@@ -18,14 +18,14 @@ function calculateprofitorloss(initialprice, quantitystocks, currentprice) {
         var loss = (initialprice - currentprice) * quantitystocks;
         var losspercentage = (loss / initialprice) * 100
         document.getElementById("output").innerHTML = "You are facing a loss of " + loss ; 
-        document.getElementById("output1").innerHTML = "Percentage - " +  losspercentage; 
+        document.getElementById("output1").innerHTML = "Loss Percentage - " +  losspercentage; 
         // console.log("Loss will be there " + loss);
     }
     else if(initialprice < currentprice){
         var profit = (currentprice - initialprice) * quantitystocks;
         var profitpercentage = (profit / initialprice) * 100
-        document.getElementById("output").innerHTML = "You are facing a profit of " + profit + profitpercentage; 
-        document.getElementById("output1").innerHTML = "Percentage -" + profitpercentage; 
+        document.getElementById("output").innerHTML = "You are facing a profit of " + profit; 
+        document.getElementById("output1").innerHTML = "Profit Percentage -" + profitpercentage  + "%"; 
         // console.log("Profit will be there " + profit);
     }
     else{
