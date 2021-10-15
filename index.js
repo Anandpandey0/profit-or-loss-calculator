@@ -14,22 +14,28 @@ function calculateprofitorloss(initialprice, quantitystocks, currentprice) {
     // console.log(initialprice);
     // console.log(quantitystocks);
     // console.log(currentprice);
-    if(initialprice > currentprice){
-        var loss = (initialprice - currentprice) * quantitystocks;
-        var losspercentage = (loss / initialprice) * 100
-        document.getElementById("output").innerHTML = "You are facing a loss of " + loss ; 
-        document.getElementById("output1").innerHTML = "Loss Percentage - " +  losspercentage; 
-        // console.log("Loss will be there " + loss);
-    }
-    else if(initialprice < currentprice){
-        var profit = (currentprice - initialprice) * quantitystocks;
-        var profitpercentage = (profit / initialprice) * 100
-        document.getElementById("output").innerHTML = "You are facing a profit of " + profit; 
-        document.getElementById("output1").innerHTML = "Profit Percentage -" + profitpercentage  + "%"; 
-        // console.log("Profit will be there " + profit);
+    if(initialprice > 0 && currentprice > 0){
+        if(initialprice > currentprice){
+            var loss = (initialprice - currentprice) * quantitystocks;
+            var losspercentage = (loss / initialprice) * 100
+            document.getElementById("output").innerHTML = "You are facing a loss of " + loss ; 
+            document.getElementById("output1").innerHTML = "Loss Percentage - " +  losspercentage; 
+            // console.log("Loss will be there " + loss);
+        }
+        else if(initialprice < currentprice){
+            var profit = (currentprice - initialprice) * quantitystocks;
+            var profitpercentage = (profit / initialprice) * 100
+            document.getElementById("output").innerHTML = "You are facing a profit of " + profit; 
+            document.getElementById("output1").innerHTML = "Profit Percentage -" + profitpercentage  + "%"; 
+            // console.log("Profit will be there " + profit);
+        }
+        else{
+        //    console.log("NO loss no profit");
+        document.getElementById("output").innerHTML = "NO profit NO loss"; 
+        }
     }
     else{
-    //    console.log("NO loss no profit");
-    document.getElementById("output").innerHTML = "NO profit NO loss"; 
+        document.getElementById("output").innerHTML = "Enter valid inputs"
     }
+    
 }
