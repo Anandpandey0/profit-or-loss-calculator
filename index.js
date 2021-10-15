@@ -19,7 +19,7 @@ function calculateprofitorloss(initialprice, quantitystocks, currentprice) {
             var loss = (initialprice - currentprice) * quantitystocks;
             var losspercentage = (loss / initialprice) * 100
             document.getElementById("output").innerHTML = "You are facing a loss of " + loss ; 
-            document.getElementById("output1").innerHTML = "Loss Percentage - " +  losspercentage; 
+            document.getElementById("output1").innerHTML = "Loss Percentage - " +  losspercentage + "%"; 
             // console.log("Loss will be there " + loss);
         }
         else if(initialprice < currentprice){
